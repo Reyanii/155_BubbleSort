@@ -28,7 +28,7 @@ void input () {
     }
 }
 
-void bubblesortArray(){
+void bubbleSortArray(){
     int pass = 1; // step 1
     do {
         for (int j=0;j<=n-1-pass;j++){ // step 2
@@ -42,7 +42,21 @@ void bubblesortArray(){
         pass = pass + 1; // step 4
     }while(pass <= n+1); // STEP 5
 }
-
+void display(){
+    cout << endl;
+    cout << "====================" << endl;
+    cout << "Element Array yang" << endl;
+    cout << "====================" << endl;
+    cout << endl;
+    for (int j=0;j<n;j++){
+        cout << arr[j];
+        if (j<n-1) {
+            cout << "-->";
+        }
+    }
+}
 int main (){
-
+    input();
+    bubbleSortArray();
+    display();
 }
