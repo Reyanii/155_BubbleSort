@@ -3,17 +3,21 @@
 using namespace std;
 
 int arr[20]; // deklarasi variable global array dengan panjang 20 dengan nama arr
-int n; // Deklarasi variable global n untuk menyimpam elemen pada array
+int n;       // Deklarasi variable global n untuk menyimpam elemen pada array
 
-void input () {
-    int d;
-    while (true) {
+void input()
+{
+    
+    while (true)
+    {
         cout << "masukan banyak elemen pada array:";
         cin >> n;
-        if (n <= 20){
+        if (n <= 20)
+        {
             break;
         }
-        else {
+        else
+        {
             cout << "\nArray maksimal 20 elemen.\n";
         }
     }
@@ -22,40 +26,49 @@ void input () {
     cout << "masukan element array" << endl;
     cout << "====================" << endl;
 
-    for (int i=0;i<n;i++){
-        cout << "data ke-" << (i+1) << "=";
+    for (int i = 0; i < n; i++)
+    {
+        cout << "data ke-" << (i + 1) << "=";
         cin >> arr[i];
     }
 }
 
-void bubbleSortArray(){
+void bubbleSortArray()
+{
     int pass = 1; // step 1
-    do {
-        for (int j=0;j<=n-1-pass;j++){ // step 2
-            if (arr[j] > arr[j++]) { // step 3
+    do
+    {
+        for (int j = 0; j <= n - 1 - pass; j++)
+        { // step 2
+            if (arr[j] > arr[j++])
+            { // step 3
                 int temp;
                 temp = arr[j];
-                arr[j] = arr[j+1];
-                arr[j+1] = temp;
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
             }
         }
         pass = pass + 1; // step 4
-    }while(pass <= n+1); // STEP 5
+    } while (pass <= n + 1); // STEP 5
 }
-void display(){
+void display()
+{
     cout << endl;
     cout << "====================" << endl;
     cout << "Element Array yang" << endl;
     cout << "====================" << endl;
     cout << endl;
-    for (int j=0;j<n;j++){
+    for (int j = 0; j < n; j++)
+    {
         cout << arr[j];
-        if (j<n-1) {
+        if (j < n - 1)
+        {
             cout << "-->";
         }
     }
 }
-int main (){
+int main()
+{
     input();
     bubbleSortArray();
     display();
